@@ -24,7 +24,7 @@
  * in this Software without prior written authorization from Metro Link.
  *
  */
-/* $XFree86$ */
+/* $XFree86: xc/programs/Xserver/hw/xfree86/input/microtouch/microtouch.h,v 1.4 2000/03/03 20:36:41 dawes Exp $ */
 
 #ifndef	_microtouch_H_
 #define _microtouch_H_
