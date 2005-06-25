@@ -81,7 +81,7 @@ static InputInfoPtr
 MuTouchPreInit(InputDriverPtr drv, IDevPtr dev, int flags);
 
 
-InputDriverRec MICROTOUCH = {
+_X_EXPORT InputDriverRec MICROTOUCH = {
   1,
   "microtouch",
   NULL,
@@ -173,7 +173,11 @@ SetupProc(	pointer module,
 	return (pointer) 1;
 }
 
-XF86ModuleData microtouchModuleData = {&VersionRec, &SetupProc, NULL };
+_X_EXPORT XF86ModuleData microtouchModuleData = {
+    &VersionRec, 
+    &SetupProc,
+    NULL
+};
 
 #endif /* XFree86LOADER */
 
