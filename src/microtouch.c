@@ -536,7 +536,7 @@ ReadInput (LocalDevicePtr local)
 static int
 ControlProc (LocalDevicePtr local, xDeviceCtl * control)
 {
-	xDeviceTSCalibrationCtl *c = (xDeviceTSCalibrationCtl *) control;
+	xDeviceAbsCalibCtl *c = (xDeviceAbsCalibCtl *) control;
 	MuTPrivatePtr priv = (MuTPrivatePtr) (local->private);
 
 	priv->min_x = c->min_x;
