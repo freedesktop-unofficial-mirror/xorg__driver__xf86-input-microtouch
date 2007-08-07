@@ -275,8 +275,6 @@ MuTouchPreInit(InputDriverPtr drv, IDevPtr dev, int flags)
 	priv->proximity = FALSE;
 	priv->button_down = FALSE;
 
-	DBG (9, XisbTrace (priv->buffer, 1));
-
 	MuTNewPacket (priv);
 	if (QueryHardware(local) != Success)
 	{
