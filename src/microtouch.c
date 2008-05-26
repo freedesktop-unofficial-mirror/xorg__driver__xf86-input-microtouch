@@ -138,7 +138,9 @@ static const char *reqSymbols[] = {
 	"xf86ErrorFVerb",
 	"xf86FindOptionValue",
 	"xf86FlushInput",
+#if GET_ABI_MAJOR(ABI_XINPUT_VERSION) < 3
 	"xf86GetMotionEvents",
+#endif
 	"xf86GetVerbosity",
 	"xf86LoaderReqSymLists",
 	"xf86MotionHistoryAllocate",
@@ -425,7 +427,10 @@ DeviceInit (DeviceIntPtr dev)
 	 * Device reports motions on 2 axes in absolute coordinates.
 	 * Axes min and max values are reported in raw coordinates.
 	 */
-	if (InitValuatorClassDeviceStruct (dev, 2, xf86GetMotionEvents,
+	if (InitValuatorClassDeviceStruct (dev, 2,
+#if GET_ABI_MAJOR(ABI_XINPUT_VERSION) < 3
+					   xf86GetMotionEvents,
+#endif
 									local->history_size, Absolute) == FALSE)
 	{
 		ErrorF ("Unable to allocate MicroTouch touchscreen ValuatorClassDeviceStruct\n");
