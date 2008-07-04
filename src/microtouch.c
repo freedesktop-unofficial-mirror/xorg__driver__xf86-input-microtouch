@@ -162,12 +162,6 @@ static const char *reqSymbols[] = {
 #if GET_ABI_MAJOR(ABI_XINPUT_VERSION) == 0
 	"xf86XInputSetSendCoreEvents",
 #endif
-	"xf86memset",
-	"xf86sscanf",
-	"xf86strcmp",
-	"xf86strlen",
-	"xf86strncmp",
-	"xf86strncpy",
         NULL
 };
 
